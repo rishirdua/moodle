@@ -61,9 +61,9 @@ if (empty($courseid)) {
     $PAGE->set_context(context_system::instance());
 }
 
-$blogheaders = blog_get_headers();
-
 require_login($courseid);
+
+$blogheaders = blog_get_headers();
 
 if ($action == 'edit') {
     $id = required_param('entryid', PARAM_INT);
