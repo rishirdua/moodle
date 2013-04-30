@@ -72,6 +72,12 @@ $PAGE->set_pagetype('course-view-' . $course->format);  // To get the blocks exa
 $PAGE->add_body_class('path-user');                     // So we can style it independently
 $PAGE->set_other_editing_capability('moodle/course:manageactivities');
 
+// Set the Moodle docs path to user docs.
+// We are using set_docs_path instead of the normal set_pagetype
+// To ensure that we get the blocks exactly like the course
+// To style the page independently.
+$PAGE->set_docs_path('user/profile');
+
 $isparent = false;
 
 if (!$currentuser and !$user->deleted
